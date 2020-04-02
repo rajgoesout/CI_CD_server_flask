@@ -11,7 +11,7 @@ class ProfileSchema(Schema):
     # ugly hack.
     profile = fields.Nested('self', exclude=('profile',), default=True, load_only=True)
 
-    @pre_load
+    # @pre_load
     def make_user(self, data, **kwargs):
         return data['profile']
 
