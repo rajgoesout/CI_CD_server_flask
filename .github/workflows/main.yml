@@ -22,7 +22,7 @@ jobs:
         run: |
           export FLASK_APP=autoapp.py
           export FLASK_DEBUG=1
-          flask db init
+          flask db stamp head
           flask db migrate
           flask db upgrade
     #   - name: Run application
