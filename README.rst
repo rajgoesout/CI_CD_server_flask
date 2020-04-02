@@ -2,7 +2,7 @@
 
 .. ![badge](https://action-badges.now.sh/JasonEtco/example-repo?action=test)
 
-.. image:: https://action-badges.now.sh/rajdeepbharati/CI_CD_server_flask
+.. image:: https://github.com/rajdeepbharati/CI_CD_server_flask/workflows/Build%20&%20Run/badge.svg
 
 Quickstart
 ----------
