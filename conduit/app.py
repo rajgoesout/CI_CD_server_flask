@@ -18,6 +18,15 @@ def create_app(config_object=ProdConfig):
     app.url_map.strict_slashes = False
     app.config.from_object(config_object)
     register_extensions(app)
+
+    @app.route('/')
+    def home():
+        return 'Hello from CI_CD_server_flask'
+
+    @app.route('/api')
+    def api():
+        return 'welcome to conduit flask api!'
+
     register_blueprints(app)
     register_errorhandlers(app)
     register_shellcontext(app)

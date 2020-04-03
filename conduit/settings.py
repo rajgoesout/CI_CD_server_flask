@@ -27,6 +27,7 @@ class Config(object):
         'http://localhost:4000',
         'http://0.0.0.0:8080',
         'http://localhost:8080',
+        'https://conduit-frontend.netlify.com'
     ]
     JWT_HEADER_TYPE = 'Token'
 
@@ -36,8 +37,14 @@ class ProdConfig(Config):
 
     ENV = 'prod'
     DEBUG = False
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL',
-                                             'postgresql://localhost/example')
+    DB_NAME = 'dev.db'
+    # Put the db file in project root
+    DB_PATH = os.path.join(Config.PROJECT_ROOT, DB_NAME)
+    # SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL',
+    #                                          'sqlite:///{0}'.format(DB_PATH))
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///{0}'.format(DB_PATH)
+    # SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL',
+    #                                          'postgresql://test:test@db/test')
 
 
 class DevConfig(Config):
