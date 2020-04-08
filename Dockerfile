@@ -11,4 +11,3 @@ RUN flask db stamp head
 RUN flask db migrate
 RUN flask db upgrade
 CMD ["flask", "run"]
-# CMD gunicorn --bind 0.0.0.0:$PORT wsgi
